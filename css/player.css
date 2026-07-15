@@ -1,0 +1,548 @@
+.description {
+  font-size: 15px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    background-color: #f8fafc;
+}
+
+.navbar {
+  padding: 10px 15px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+	
+#login-btn {
+  background-color: #007bff;
+  margin-left: 15px;
+  color: #ffffff;
+  border: none;
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}	
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  padding: 0;
+}
+
+.menu-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #333333;
+  border-radius: 2px;
+}
+
+.addToCart {
+  background-color: #007bff;
+  width: 100%;
+  color: #ffffff;
+  border: none;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: auto; 
+  transition: all 0.3s ease;
+}	
+
+.addToCart:hover {
+  background-color: #0056b3;
+}
+
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%); 
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.side-menu.is-active {
+  transform: translateX(0);
+}
+
+.menu-header {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-close-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #333333;
+  padding: 5px 10px;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.menu-links a {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #444444;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.2s ease;
+}
+
+.menu-links a:hover, 
+.menu-links a.active {
+  background-color: #f4f6f9;
+  color: #007bff;
+  padding-left: 35px;
+}
+
+.card-link-wrapper {
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+/* Hero & Discovery Section */
+.hero-discovery-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 15px;
+    max-width: 1200px;
+    margin-top: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.banner-carousel-box {
+    position: relative;
+    width: 100%;
+    height: 360px; 
+    border-radius: 0px;
+    overflow: hidden;
+    background-color: #e2e8f0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-weight: bold;
+    font-size: 14px;
+}
+.carousel-arrow.prev { left: 10px; }
+.carousel-arrow.next { right: 10px; }
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+.carousel-dots .dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+}
+.carousel-dots .dot.active {
+    background: #007bff;
+    width: 15px;
+    border-radius: 3px;
+    transition: width 0.3s;
+}
+
+.anime-news-ticker-box {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 220px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.news-header-title {
+    background: #ffffff;
+    color: #007bff;
+    padding: 10px 12px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.animate-pulse {
+    animation: pulse 1.5s infinite;
+    color: #ff5722;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.news-ticker-wrapper {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.news-ticker-track {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    width: 100%;
+    padding: 10px 0;
+    animation: scrollUpNews 20s linear infinite;
+}
+.news-ticker-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollUpNews {
+    0% { top: 0; }
+    100% { top: -240px; }
+}
+
+.news-item {
+    padding: 10px;
+    margin: 0 10px;
+    background: #ffffff;
+    border-left: 4px solid #007bff;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: #334155;
+    line-height: 1.3;
+}
+
+@media (min-width: 800px) {
+    .hero-discovery-container {
+        grid-template-columns: 2fr 1fr; 
+        gap: 20px;
+        padding: 20px;
+    }
+    .banner-carousel-box { height: 380px; }
+    .banner-overlay-text { font-size: 22px; padding: 20px; }
+    .anime-news-ticker-box { height: 380px; }
+}
+
+/* Trending Section */
+#trendingProductsContainer, #recentProductsContainer {
+    margin-top: 30px;
+    padding-top: 5px;
+    border: 0px solid black;
+    padding-bottom: 5px;
+    display: flex;
+    gap: 10px;
+    padding-right: 0px;
+    overflow-x: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    -webkit-overflow-scrolling: touch; 
+    height: auto;
+}
+
+.card {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border: 0px solid black;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    width: 160px;
+}
+
+.card img {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    width: 160px;
+    height: auto;
+    max-width:600px;
+}
+
+.card + .card {
+    border-left: 0px solid black;
+    padding-left: 10px;
+}
+
+#trendingProductsContainer::-webkit-scrollbar, 
+#recentProductsContainer::-webkit-scrollbar {
+    display: none; 
+}
+
+.loading-placeholder {
+    font-family: sans-serif;
+    color: #64748b;
+    font-size: 14px;
+    padding: 20px;
+}
+
+/* Dashboard Schedule Panels */
+.upcoming-classes, .pending-homework {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.dashboard-row-card {
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 0px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-details {
+  flex-grow: 1;
+}
+
+.card-details h4 {
+  margin: 0 0 0px 0;
+  font-size: 15px;
+  color: #1e293b;
+}
+
+.card-details span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.card-badge {
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-live { background-color: #fee2e2; color: #ef4444; font-weight: bold; }
+.badge-waiting { background-color: #f1f5f9; color: #64748b; }
+.badge-warning { background-color: #fef3c7; color: #d97706; }
+
+@media (max-width: 600px) {
+  .dashboard-row-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .card-badge {
+    width: auto;
+    text-align: center;
+  }
+}
+
+/* Player Container Context */
+.player-container {
+  margin-top:20px;
+}
+
+/* 🎬 डिफ़ॉल्ट वीडियो रैपर स्टाइल */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #000;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.video-wrapper iframe, 
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* 🔒 एंटी-स्किप ओवरले */
+#videoOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    cursor: not-allowed;
+    display: none;
+    background: transparent;
+}
+
+/* 🚨 जब वीडियो रैपर फुलस्क्रीन मोड में जाए */
+.video-wrapper:fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    background-color: #000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.video-wrapper:fullscreen iframe,
+.video-wrapper:fullscreen video,
+.video-wrapper:fullscreen #videoOverlay {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* 📱 मोबाइल सफारी / क्रोम के लिए विशेष फुलस्क्रीन फिक्स */
+.video-wrapper:-webkit-full-screen {
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: #000 !important;
+    display: flex !important;
+}
+.video-wrapper:-webkit-full-screen iframe,
+.video-wrapper:-webkit-full-screen video,
+.video-wrapper:-webkit-full-screen #videoOverlay {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* 🎛️ कस्टम बटन स्टाइलिंग */
+#customControls {
+    margin-top: 15px;
+    text-align: center;
+}
+#fullscreenBtn {
+    padding: 10px 20px;
+    background: #0284c7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
