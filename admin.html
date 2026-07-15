@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/admin-style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/admin.js"></script>
+  <title>Admin Dashboard Workspace</title>
+</head>
+<body>
+
+ <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <aside class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <button class="menu-close-btn" id="menuCloseBtn">&times;</button>
+        </div>
+        <nav class="menu-links">
+            <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="admin.html"><i class="fa-solid fa-store"></i> Admin Workspace</a>
+            <a href="#"><i class="fa-solid fa-tags"></i> Offers</a>
+            <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+        </nav>
+    </aside>
+
+    <nav class="navbar">
+        <div class="nav-actions">
+            <button class="menu-btn" id="menuOpenBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="login-cart-btn" style="margin-left:auto; display: flex;">
+                <a href="login.html" id="cart-nav-btn"
+                    style="border-radius: 0px; padding: 8px 20px; background-color: #007bff; margin-right: 0px; font-size: 16px; color: #ffffff; text-decoration: none; display: flex; align-items: center;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <a href="login.html" id="login-btn">Log In</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-section" style="max-width: 800px; margin: 0 auto;">
+        
+        <h3 style="margin-top: 20px;"><i class="fa-solid fa-video" style="color:#ef4444; margin-right:8px;"></i>Schedule Live YouTube Class</h3>
+        <form id="lectureForm" class="dashboard-row-card1 admin-form-layout1">
+            <div class="form-group-element1">
+                <label>Subject Topic Name</label>
+                <input type="text" id="lectureSubject" placeholder="e.g., Quantum Mechanics Overview" required>
+            </div>
+            
+            <div class="form-group-element1">
+                <label>YouTube Stream URL / Embed Link</label>
+                <input type="text" id="lectureUrl" placeholder="e.g., https://www.youtube.com/watch?v=..." required>
+            </div>
+            
+            <div class="form-group-element1">
+                <label>Live Class Target Time</label>
+                <input type="datetime-local" id="lectureTime" required>
+            </div>
+            
+            <button type="submit" class="addToCart1 admin-submit-btn">
+                <i class="fa-solid fa-circle-plus"></i>Publish Lecture Pipeline
+            </button>
+        </form>
+
+        <h3 style="margin-top: 50px;"><i class="fa-solid fa-file-pdf" style="color:#d97706; margin-right:8px;"></i>Deploy Homework Assignment Matrix</h3>
+        <form id="homeworkForm" class="dashboard-row-card1 admin-form-layout1 assignment-card-accent">
+            <div class="form-group-element1">
+                <label>Assignment Header / Tasks Title</label>
+                <input type="text" id="homeworkTitle" placeholder="e.g., Integral Calculus Worksheet II" required>
+            </div>
+            
+            <div class="form-group-element1">
+                <label>PDF Attachment URL / Resource Link</label>
+                <input type="url" id="homeworkLink" placeholder="e.g., https://drive.google.com/..." required>
+            </div>
+            
+            <div class="form-group-element1">
+                <label>Final Submission Date Deadline</label>
+                <input type="date" id="homeworkDueDate" required>
+            </div>
+            
+            <button type="submit" class="addToCart1 admin-submit-btn homework-accent-btn">
+                <i class="fa-solid fa-file-arrow-up"></i>Upload Homework Asset
+            </button>
+        </form>
+
+    </div>
+</body>
+</html>

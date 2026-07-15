@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/script.js"></script>
+  <title>Live</title>
+</head>
+<body>
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <aside class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <button class="menu-close-btn" id="menuCloseBtn">&times;</button>
+        </div>
+        <nav class="menu-links">
+            <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="admin.html"><i class="fa-solid fa-store"></i> Admin Workspace</a>
+            <a href="#"><i class="fa-solid fa-tags"></i> Offers</a>
+            <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+        </nav>
+    </aside>
+
+    <nav class="navbar">
+        <div class="nav-actions">
+            <button class="menu-btn" id="menuOpenBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="login-cart-btn" style="margin-left:auto; display: flex;">
+                <a href="login.html" id="cart-nav-btn"
+                    style="border-radius: 0px; padding: 8px 20px; background-color: #007bff; margin-right: 0px; font-size: 16px; color: #ffffff; text-decoration: none; display: flex; align-items: center;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <a href="login.html" id="login-btn">Log In</a>
+            </div>
+        </div>
+    </nav>
+    <div class="dashboard-section" style=" max-width: 1200px; margin: 0 auto;">
+        
+        <h3>Upcoming Classes</h3>
+        <div class="upcoming-classes" id="upcomingClassesContainer">
+            <div class="loading-placeholder">Syncing live school channels...</div>
+        </div>
+
+        <h3 style="margin-top: 40px;">Pending Homework</h3>
+        <div class="pending-homework" id="pendingHomeworkContainer">
+            <div class="loading-placeholder">Fetching assignments matrix...</div>
+        </div>
+
+    </div>
+</body>
+
+      
+    </div>
+</body>
+</html>
